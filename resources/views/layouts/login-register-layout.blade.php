@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pustok - Book Store HTML Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +14,7 @@
 
 <body>
 <div class="site-wrapper" id="top">
-    <div class="site-header header-2 mb--20 d-none d-lg-block">
-        @include('layout-include.user.navbar-search')
-        @include('layout-include.user.header-bottom')
-    </div>
+    @include('layout-include.user.login-layout.header')
     <div class="site-mobile-menu">
         <header class="mobile-header d-block d-lg-none pt--10 pb-md--10">
             <div class="container">
@@ -176,11 +173,10 @@
                             <li class="menu-item-has-children">
                                 <a href="#">Home</a>
                                 <ul class="sub-menu">
-                                    <li><a href="index.html">Home One</a></li>
-                                    <li><a href="index-2.html">Home Two</a></li>
-                                    <li><a href="index-3.html">Home Three</a></li>
-                                    <li><a href="index-4.html">Home Four</a></li>
-                                    <li><a href="index-5.html">Home Five</a></li>
+                                    <li> <a href="index.html">Home One</a></li>
+                                    <li> <a href="index-2.html">Home Two</a></li>
+                                    <li> <a href="index-3.html">Home Three</a></li>
+                                    <li> <a href="index-4.html">Home Four</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
@@ -282,8 +278,8 @@
                         <li class="menu-item-has-children">
                             <a href="#">Currency - USD $ <i class="fas fa-angle-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="cart.html">USD $</a></li>
-                                <li><a href="checkout.html">EUR €</a></li>
+                                <li> <a href="cart.html">USD $</a></li>
+                                <li> <a href="checkout.html">EUR €</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
@@ -337,11 +333,10 @@
                                 <a href="javascript:void(0)">Home <i
                                         class="fas fa-chevron-down dropdown-arrow"></i></a>
                                 <ul class="sub-menu">
-                                    <li><a href="index.html">Home One</a></li>
-                                    <li><a href="index-2.html">Home Two</a></li>
-                                    <li><a href="index-3.html">Home Three</a></li>
-                                    <li><a href="index-4.html">Home Four</a></li>
-                                    <li><a href="index-5.html">Home Five</a></li>
+                                    <li> <a href="index.html">Home One</a></li>
+                                    <li> <a href="index-2.html">Home Two</a></li>
+                                    <li> <a href="index-3.html">Home Three</a></li>
+                                    <li> <a href="index-4.html">Home Four</a></li>
                                 </ul>
                             </li>
                             <!-- Shop -->
@@ -358,7 +353,7 @@
                                         </ul>
                                     </li>
                                     <li class="cus-col-25">
-                                        <h3 class="menu-title"><a href="javascript:void(0)">Shop List</a></h3>
+                                        <h3 class="menu-title"> <a href="javascript:void(0)">Shop List</a></h3>
                                         <ul class="mega-single-block">
                                             <li><a href="shop-list.html">Fullwidth</a></li>
                                             <li><a href="shop-list-left-sidebar.html">left Sidebar</a></li>
@@ -366,7 +361,7 @@
                                         </ul>
                                     </li>
                                     <li class="cus-col-25">
-                                        <h3 class="menu-title"><a href="javascript:void(0)">Product Details 1</a>
+                                        <h3 class="menu-title"> <a href="javascript:void(0)">Product Details 1</a>
                                         </h3>
                                         <ul class="mega-single-block">
                                             <li><a href="product-details.html">Product Details Page</a></li>
@@ -449,32 +444,45 @@
             </div>
         </div>
     </div>
-    <!--=================================
-        Hero Area
-        ===================================== -->
-    @include('layout-include.user.slider')
-   @yield('content')
-    <!--=================================
-        Footer
-        ===================================== -->
+    <section class="breadcrumb-section">
+        <h2 class="sr-only">Site Breadcrumb</h2>
+        <div class="container">
+            <div class="breadcrumb-contents">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Login</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <!--=============================================
+=            Login Register page content         =
+=============================================-->
+    <main class="page-section inner-page-sec-padding-bottom">
+        <div class="container">
+           @yield('content')
+        </div>
+    </main>
 </div>
 <!--=================================
-        Brands Slider
-        ===================================== -->
+Brands Slider
+===================================== -->
 <section class="section-margin">
     <h2 class="sr-only">Brand Slider</h2>
     <div class="container">
         <div class="brand-slider sb-slick-slider border-top border-bottom" data-slick-setting='{
-                                                "autoplay": true,
-                                                "autoplaySpeed": 8000,
-                                                "slidesToShow": 6
-                                                }' data-slick-responsive='[
-                    {"breakpoint":992, "settings": {"slidesToShow": 4} },
-                    {"breakpoint":768, "settings": {"slidesToShow": 3} },
-                    {"breakpoint":575, "settings": {"slidesToShow": 3} },
-                    {"breakpoint":480, "settings": {"slidesToShow": 2} },
-                    {"breakpoint":320, "settings": {"slidesToShow": 1} }
-                ]'>
+                                            "autoplay": true,
+                                            "autoplaySpeed": 8000,
+                                            "slidesToShow": 6
+                                            }' data-slick-responsive='[
+                {"breakpoint":992, "settings": {"slidesToShow": 4} },
+                {"breakpoint":768, "settings": {"slidesToShow": 3} },
+                {"breakpoint":575, "settings": {"slidesToShow": 3} },
+                {"breakpoint":480, "settings": {"slidesToShow": 2} },
+                {"breakpoint":320, "settings": {"slidesToShow": 1} }
+            ]'>
             <div class="single-slide">
                 <img src="image/others/brand-1.jpg" alt="">
             </div>
@@ -503,8 +511,8 @@
     </div>
 </section>
 <!--=================================
-        Footer Area
-        ===================================== -->
+Footer Area
+===================================== -->
 @include('layout-include.user.footer')
 <!-- Use Minified Plugins Version For Fast Page Load -->
 <script src="{{asset('user/js/plugins.js')}}"></script>
