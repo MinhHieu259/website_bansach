@@ -24,7 +24,7 @@ class AdminMiddleware
                 return redirect('/access-denied');
             }
         }else if(!Auth::check()){
-            return redirect('/login')->with('message', 'Please Login First');
+            return redirect('/login')->with('error', 'Please Login First');
         }
     }
 }
