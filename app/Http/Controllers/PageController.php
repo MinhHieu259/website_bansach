@@ -25,4 +25,9 @@ class PageController extends Controller
     {
         return view('components.user.home');
     }
+
+    public function accessDenied()
+    {
+        return view('errors.access-denied');
+    }
 }

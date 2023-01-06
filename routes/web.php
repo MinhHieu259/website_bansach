@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 //Auth::routes();
 
-Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
-Route::get('/login', [\App\Http\Controllers\AuthController::class, 'loginPage'])->name('loginPage');
+Route::get('access-denied', [PageController::class, 'accessDenied'])->name('deniedAccess');

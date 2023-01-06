@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 ">
-                    <a href="index.html" class="site-brand">
+                    <a href="{{route('home')}}" class="site-brand">
                         <img src="{{asset('user/image/logo.png')}}" alt="">
                     </a>
                 </div>
@@ -264,8 +264,8 @@
                     <div class="main-navigation flex-lg-right">
                         <div class="cart-widget">
                             <div class="login-block">
-                                <a href="login-register.html" class="font-weight-bold">Login</a> <br>
-                                <span>or</span><a href="login-register.html">Register</a>
+                                <a href="{{route('login')}}" class="font-weight-bold">Login</a> <br>
+                                <span>or</span><a href="{{route('registerPage')}}">Register</a>
                             </div>
                             <div class="cart-block">
                                 <div class="cart-total">

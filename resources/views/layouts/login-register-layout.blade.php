@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pustok - Book Store HTML Template</title>
+    <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Use Minified Plugins Version For Fast Page Load -->
     <link rel="stylesheet" type="text/css" media="screen" href="{{asset('user/css/plugins.css')}}"/>
@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row align-items-sm-end align-items-center">
                     <div class="col-md-4 col-7">
-                        <a href="index.html" class="site-brand">
+                        <a href="{{route('home')}}" class="site-brand">
                             <img src="image/logo.png" alt="">
                         </a>
                     </div>
@@ -450,7 +450,7 @@
             <div class="breadcrumb-contents">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
                         <li class="breadcrumb-item active">Login</li>
                     </ol>
                 </nav>
