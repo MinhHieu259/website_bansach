@@ -18,10 +18,12 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->text('desc');
             $table->unsignedBigInteger('publisher_id');
+            $table->unsignedBigInteger('category_id');
             $table->float('price');
             $table->string('book_avatar');
             $table->timestamps();
             $table->foreign('publisher_id')->references('id')->on('publishers')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
