@@ -24,9 +24,19 @@
                             <label for="password">Password</label>
                             <input class="mb-0 form-control" name="password" type="password" id="login-password" placeholder="Enter your password">
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 text-center">
                             <button type="submit" class="btn btn-outlined">Login</button>
+                            <div class="social-auth-links text-center mb-3">
+                                <p>- OR -</p>
+                                <a href="{{route('login.facebook')}}" class="btn btn-block btn-primary">
+                                    <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                                </a>
+                                <a href="{{route('login.google')}}" class="btn btn-block btn-danger">
+                                    <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                                </a>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </form>

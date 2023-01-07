@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
@@ -65,5 +66,58 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    //Google login
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    //Google Callback
+    public function handleGoogleCallback()
+    {
+        $user = Socialite::driver('google')->user();
+        $this->registerOrLoginUSer($user);
+        return redirect()->route('home');
+    }
+
+    //Facebook login
+    public function redirectFacebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    //Facebook Callback
+    public function handleFacebookCallback()
+    {
+        $user = Socialite::driver('facebook')->user();
+        $this->registerOrLoginUSer($user);
+        return redirect()->route('home');
+    }
+
+    public function registerOrLoginUSer($data)
+    {
+        $user = User::where('email', '=', $data->email)->first();
+        $role = Role::where('name', 'USER')->first();
+        if(!$user)
+        {
+            $user = new User();
+            $user->name = $data->name;
+            $user->email = $data->email;
+            $user->address = '';
+            $user->phone = '';
+            $user->password = '';
+            $user->role_id = $role->id;
+            $user->provider_id = $data->id;
+            $user->avatar = $data->avatar;
+            $user->save();
+        }
+        Auth::login($user);
+        if(Auth::user()->role['name'] == 'ADMIN'){
+            return redirect('/admin/dashboard');
+        }else if(Auth::user()->role['name'] == 'USER'){
+            return redirect('/');
+        }
     }
 }

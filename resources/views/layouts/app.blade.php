@@ -7,11 +7,11 @@
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Use Minified Plugins Version For Fast Page Load -->
-    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('user/css/plugins.css')}}"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('user/css/main.css')}}"/>
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('user/image/favicon.ico')}}">
-</head>
 
+</head>
+<link rel="stylesheet" type="text/css" media="screen" href="{{asset('user/css/plugins.css')}}"/>
+<link rel="stylesheet" type="text/css" media="screen" href="{{asset('user/css/main.css')}}"/>
+<link rel="shortcut icon" type="image/x-icon" href="{{asset('user/image/favicon.ico')}}">
 <body>
 <div class="site-wrapper" id="top">
     <div class="site-header header-2 mb--20 d-none d-lg-block">
