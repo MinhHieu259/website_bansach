@@ -35,19 +35,39 @@
 
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas  fa-coffee"></i>
+                    <a href="{{route('admin.categories')}}" class="nav-link {{request()->is('admin/categories') ? 'active' : ''}}">                        <i class="nav-icon fas  fa-puzzle-piece"></i>
+                        <p>
+                            Manage Category
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('admin.publishers')}}" class="nav-link {{request()->is('admin/publishers') ? 'active' : ''}}">
+                        <i class="nav-icon fas  fa-paint-brush"></i>
+                        <p>
+                            Manage Publishers
+                        </p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="{{route('admin.books')}}" class="nav-link {{request()->is('admin/books') ? 'active' : ''}}">
+                        <i class="nav-icon fas  fa-book "></i>
                         <p>
                             Manage Books
                         </p>
                     </a>
                 </li>
 
+
+
                 @if (Auth::check())
                     <li class="nav-item">
                         <a href="" class="nav-link" href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
-                            <i class="nav-icon fas fa-book"></i>
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
                             <p>
                                 Logout
                             </p>
