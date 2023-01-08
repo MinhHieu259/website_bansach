@@ -24,6 +24,9 @@
                             <label for="password">Password</label>
                             <input class="mb-0 form-control" name="password" type="password" id="login-password" placeholder="Enter your password">
                         </div>
+                        <div class="col-md-12 text-right">
+                            <a href="{{ route('password.request') }}" class="text-primary">Forgot Password ?</a>
+                        </div>
                         <div class="col-md-12 text-center">
                             <button type="submit" class="btn btn-outlined">Login</button>
                             <div class="social-auth-links text-center mb-3">

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
 
 //Authentication
+//Login Basic
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
 Route::get('/register', [AuthController::class, 'registerPage'])->name('registerPage');
 Route::post('/do-register', [AuthController::class, 'doRegister'])->name('doRegister');
@@ -20,3 +21,5 @@ Route::get('login/google/callback', [AuthController::class, 'handleGoogleCallbac
 // Login Facebook
 Route::get('login/facebook', [AuthController::class, 'redirectFacebook'])->name('login.facebook');
 Route::get('login/facebook/callback', [AuthController::class, 'handleFacebookCallback']);
+
+//Forgot Password
