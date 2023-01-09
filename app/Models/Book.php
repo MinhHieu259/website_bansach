@@ -16,6 +16,7 @@ class Book extends Model
     protected $fillable = [
         'title',
         'desc',
+        'category_id',
         'publisher_id',
         'price',
         'book_avatar'
@@ -23,14 +24,14 @@ class Book extends Model
 
     public function publisher()
     {
-        return $this->belongsTo(Publisher::class, 'id');
+        return $this->belongsTo(Publisher::class, 'publisher_id');
     }
 
     public function category() {
-        return $this->belongsTo(Category::class, 'id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function image(){
-        return $this->hasMany(Image::class, 'id');
+    public function images(){
+        return $this->hasMany(Image::class);
     }
 }

@@ -19,6 +19,6 @@ class Image extends Model
     ];
 
     public function book(){
-        return $this->belongsTo(Book::class, 'id');
+        return $this->belongsTo(Book::class);
     }
 }

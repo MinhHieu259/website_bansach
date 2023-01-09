@@ -34,7 +34,7 @@
                     <div class="col-lg-12">
                         <div class="d-flex justify-content-between mb-2">
                             <div>
-                                <a href="{{route('admin.categories')}}">
+                                <a href="{{route('admin.books.create')}}">
                                     <button class="btn btn-primary">Add New Book</button>
                                 </a>
 
@@ -48,7 +48,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th scope="col">Avatar</th>
-                                        <th scope="col">Name Book</th>
+                                        <th scope="col">Title</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Publisher</th>
                                         <th scope="col">Category</th>
@@ -59,11 +59,17 @@
                                     @forelse($books as $index=>$book)
                                         <tr>
                                             <th scope="row">{{$book->id}}</th>
+                                            <th>
+                                                <img src="{{url('/uploads')}}/{{$book->book_avatar}}"  width="70" height="70" alt="" style="object-fit: cover">
+                                            </th>
                                             <td>{{ $book->title }}</td>
+                                            <td>{{ $book->price }}</td>
+                                            <td>{{ $book->publisher->name }}</td>
+                                            <td>{{ $book->category->name }}</td>
                                             <td>
 
-                                                <form action="{{route('admin.categories.destroy', $category)}}" method="POST">
-                                                    <a href="{{route('admin.categories.edit', $category)}}">
+                                                <form action="{{route('admin.books.destroy', $book)}}" method="POST">
+                                                    <a href="{{route('admin.books.edit', $book)}}">
                                                         <i class="fa fa-edit "></i>
                                                     </a>
                                                     @csrf
@@ -89,8 +95,6 @@
 {{--                                {{ $categories ->links() }}--}}
                             </div>
                         </div>
-
-
                     </div>
                     <!-- /.col-md-6 -->
 

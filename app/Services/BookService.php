@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Book;
 use App\Models\Category;
+use App\Models\Image;
 
 class BookService
 {
@@ -14,11 +15,35 @@ class BookService
 
     function findAll() {
         try {
-            $categories = $this->category->get();
-            return $categories ?? [];
+            $books = $this->book->get();
+            return $books ?? [];
         } catch (\Throwable $e) {
             report($e);
             return [];
+        }
+    }
+
+    function save($data)
+    {
+        try {
+
+            return true;
+        } catch (\Throwable $e) {
+            report($e);
+            return false;
+        }
+    }
+
+    function saveImages($list)
+    {
+        try {
+            foreach ($list as $item) {
+                Image::create($item);
+            }
+            return true;
+        } catch (\Throwable $e) {
+            report($e);
+            return false;
         }
     }
 }

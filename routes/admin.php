@@ -31,6 +31,11 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::prefix('books')->group(function() {
         Route::get('/', [BookController::class, 'index'])->name('admin.books');
+        Route::get('/create', [BookController::class, 'create'])->name('admin.books.create');
+        Route::post('/store', [BookController::class, 'store'])->name('admin.books.store');
+        Route::get('/{book}/edit', [BookController::class, 'show'])->name('admin.books.edit');
+        Route::put('/{book}/update', [BookController::class, 'update'])->name('admin.books.update');
+        Route::delete('/{book}/destroy', [BookController::class, 'destroy'])->name('admin.books.destroy');
     });
 });
 
