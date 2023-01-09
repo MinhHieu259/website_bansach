@@ -452,7 +452,7 @@
     <!--=================================
         Hero Area
         ===================================== -->
-    @include('layout-include.user.slider')
+    {{--@include('layout-include.user.slider')--}}
    @yield('content')
     <!--=================================
         Footer

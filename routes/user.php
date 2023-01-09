@@ -4,7 +4,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
-
+Route::get('/detail/{id}', [App\Http\Controllers\PageController::class, 'detail'])->name('home.detail-book');
 //Authentication
 //Login Basic
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -23,9 +24,17 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view('components.user.home');
+        $all_book = Book::all();
+
+
+        return view('components.user.home', compact("all_book"));
     }
 
+    public function detail ($id)
+    {
+        $book = Book::find($id);
+        return view('components.user.book.detail', compact("book"));
+    }
     public function accessDenied()
     {
         return view('errors.access-denied');
