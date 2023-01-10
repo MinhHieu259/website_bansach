@@ -20,8 +20,8 @@ class CreateOrdersTable extends Migration
             $table->float('total');
             $table->dateTime('dateTimeOrder');
             $table->string('shipName')->nullable();
-            $table->string('shipAddress');
-            $table->string('shipCity');
+            $table->string('shipAddress')->nullable();
+            $table->string('shipCity')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

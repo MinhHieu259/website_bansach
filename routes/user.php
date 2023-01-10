@@ -1,10 +1,29 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
 Route::get('/detail/{id}', [App\Http\Controllers\PageController::class, 'detail'])->name('home.detail-book');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])->name('cart');
+    Route::get('/order/{bookId}/addToCart', [CartController::class, 'addToCart'])->name('order.add');
+    Route::post('/order/updateCart', [CartController::class, 'updateCart'])->name('order.update');
+    Route::get('/order/deleteItemCart/{cart}', [CartController::class, 'delete'])->name('order.delete');
+    //order
+    Route::get('/order/{order}/check-out', [OrderController::class, 'checkOut'])->name('order.checkOut');
+    Route::post('/order/place-order/{order}', [OrderController::class, 'placeOrder'])->name('order.place-order');
+});
+
+Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category');
+
+
+
+
 //Authentication
 //Login Basic
 Route::get('/login', [AuthController::class, 'loginPage'])->name('login');

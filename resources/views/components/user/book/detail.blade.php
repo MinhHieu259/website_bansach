@@ -45,16 +45,16 @@
                 <p class="tag-block">Tags: <a href="#">Movado</a>, <a href="#">Omega</a></p>
                 <h3 class="product-title">{{ $book->title }}</h3>
                 <ul class="list-unstyled">
-                    <li>Ex Tax: <span class="list-value"> {{ $book->price }}$</span></li>
-                    <li>Brands: <a href="#" class="list-value font-weight-bold"> {{$book->publisher->id }}</a></li>
-                    <li>Product Code: <span class="list-value"> {{ $book->id }}</span></li>
-                    <li>Reward Points: <span class="list-value"> 200</span></li>
-                    <li>Availability: <span class="list-value"> In Stock</span></li>
+                    <li>Price <span class="list-value"> {{ $book->price }}</span></li>
+{{--                    <li>Brands: <a href="#" class="list-value font-weight-bold"> {{$book->publisher->id }}</a></li>--}}
+{{--                    <li>Product Code: <span class="list-value"> {{ $book->id }}</span></li>--}}
+{{--                    <li>Reward Points: <span class="list-value"> 200</span></li>--}}
+{{--                    <li>Availability: <span class="list-value"> In Stock</span></li>--}}
                 </ul>
-                <div class="price-block">
-                    <span class="price-new">{{ $book->price }}$</span>
-                    <del class="price-old">£91.86</del>
-                </div>
+{{--                <div class="price-block">--}}
+{{--                    <span class="price-new">{{ $book->price }}$</span>--}}
+{{--                    <del class="price-old">£91.86</del>--}}
+{{--                </div>--}}
                 <div class="rating-widget">
                     <div class="rating-block">
                         <span class="fas fa-star star_on"></span>
@@ -68,19 +68,14 @@
                         <a href="">Write a review</a>
                     </div>
                 </div>
-                <article class="product-details-article">
-                    <h4 class="sr-only">Product Summery</h4>
-                    <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the Dust
-                        with ruffles at the bottom of the
-                        dress.</p>
-                </article>
+
                 <div class="add-to-cart-row">
-                    <div class="count-input-block">
-                        <span class="widget-label">Qty</span>
-                        <input type="number" class="form-control text-center" value="1">
-                    </div>
+{{--                    <div class="count-input-block">--}}
+{{--                        <span class="widget-label">Qty</span>--}}
+{{--                        <input type="number" class="form-control text-center" value="1">--}}
+{{--                    </div>--}}
                     <div class="add-cart-btn">
-                        <a href="" class="btn btn-outlined--primary"><span class="plus-icon">+</span>Add to
+                        <a href="{{route('order.add', $book)}}" class="btn btn-outlined--primary"><span class="plus-icon">+</span>Add to
                             Cart</a>
                     </div>
                 </div>
@@ -99,18 +94,12 @@
                     DESCRIPTION
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" id="tab2" data-toggle="tab" href="#tab-2" role="tab"
-                    aria-controls="tab-2" aria-selected="true">
-                    REVIEWS (1)
-                </a>
-            </li>
         </ul>
         <div class="tab-content space-db--20" id="myTabContent">
             <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab1">
                 <article class="review-article">
                     <h1 class="sr-only">Tab Article</h1>
-                    {{ $book->desc }}
+                    {{ print($book->desc) }}
                 </article>
             </div>
             <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab2">

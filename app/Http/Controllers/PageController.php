@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -26,8 +27,12 @@ class PageController extends Controller
     {
         $all_book = Book::all();
 
+        $categoryOne = Category::find(1);
+        $categoryTwo = Category::find(2);
+        $categoryThree = Category::find(3);
 
-        return view('components.user.home', compact("all_book"));
+        return view('components.user.home',
+            compact("all_book", 'categoryOne', 'categoryTwo', 'categoryThree'));
     }
 
     public function detail ($id)

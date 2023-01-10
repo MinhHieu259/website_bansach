@@ -510,6 +510,7 @@
 <script src="{{asset('user/js/plugins.js')}}"></script>
 <script src="{{asset('user/js/ajax-mail.js')}}"></script>
 <script src="{{asset('user/js/custom.js')}}"></script>
+@stack('scripts')
 </body>
 
 </html>

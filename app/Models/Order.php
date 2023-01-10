@@ -20,7 +20,11 @@ class Order extends Model
       'dateTimeOrder',
       'shipName',
       'shipAddress',
-      'shipCity'
+      'shipCity',
+      'shipping_cost',
+      'phone_number',
+      'email_address',
+      'note',
     ];
 
     public function user(){

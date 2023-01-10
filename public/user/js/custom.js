@@ -78,7 +78,7 @@ jQuery(document).ready(function($) {
             });
         }
         /**********************
-         *Expand Category Mobile Menu 
+         *Expand Category Mobile Menu
          ***********************/
 
         function categoryMenuExpandInMobile() {
@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
             $(".search-dismiss,body").on('click', function(e) {
                 $(".search-wrapper").removeClass('open')
             })
-            // $("body").on('click', function () { 
+            // $("body").on('click', function () {
             // 	$(".search-wrapper").removeClass('open')
             // })
             $(".search-box,.search-trigger").on('click', function(e) {
@@ -330,13 +330,13 @@ jQuery(document).ready(function($) {
         /*-------------------------------------
         	--> Add To Cart Animation
         ---------------------------------------*/
-        $('.add-to-cart').on('click', function(e) {
+        $('.add-to-order').on('click', function(e) {
             e.preventDefault();
 
             if ($(this).hasClass('added')) {
-                $(this).removeClass('added').find('i').removeClass('ti-check').addClass('ti-shopping-cart').siblings('span').text('add to cart');
+                $(this).removeClass('added').find('i').removeClass('ti-check').addClass('ti-shopping-order').siblings('span').text('add to order');
             } else {
-                $(this).addClass('added').find('i').addClass('ti-check').removeClass('ti-shopping-cart').siblings('span').text('added');
+                $(this).addClass('added').find('i').addClass('ti-check').removeClass('ti-shopping-order').siblings('span').text('added');
             }
         });
         /*-------------------------------------
@@ -359,7 +359,7 @@ jQuery(document).ready(function($) {
         	--> NIce Select
         ---------------------------------------*/
         $('.nice-select').niceSelect()
-        
+
 
         /*-------------------------------------
         	--> Product Sorting
