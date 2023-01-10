@@ -58,7 +58,7 @@
                                     <tbody>
                                     @forelse($books as $index=>$book)
                                         <tr>
-                                            <th scope="row">{{$book->id}}</th>
+                                            <th scope="row">{{$index + 1}}</th>
                                             <th>
                                                 <img src="{{url('/uploads')}}/{{$book->book_avatar}}"  width="70" height="70" alt="" style="object-fit: cover">
                                             </th>
@@ -92,7 +92,7 @@
                             </div>
 
                             <div class="card-footer d-flex justify-content-end">
-{{--                                {{ $categories ->links() }}--}}
+                                {{ $books ->links() }}
                             </div>
                         </div>
                     </div>

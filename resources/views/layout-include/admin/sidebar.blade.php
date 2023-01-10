@@ -61,6 +61,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{route('admin.orders')}}" class="nav-link {{request()->is('admin/orders') ? 'active' : ''}}">
+                        <i class="nav-icon fas  fa-coffee "></i>
+                        <p>
+                            Manage Order
+                        </p>
+                    </a>
+                </li>
+
 
 
                 @if (Auth::check())

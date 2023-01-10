@@ -24,7 +24,7 @@ class BookController extends Controller
     }
 
     public function index() {
-        $books = $this->bookService->findAll();
+        $books = Book::query()->paginate(5);
 
         return view('components.admin.books.index',
                     compact('books'));

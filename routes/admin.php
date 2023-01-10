@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\PublisherController;
 use App\Models\Book;
@@ -36,6 +37,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/{book}/edit', [BookController::class, 'show'])->name('admin.books.edit');
         Route::put('/{book}/update', [BookController::class, 'update'])->name('admin.books.update');
         Route::delete('/{book}/destroy', [BookController::class, 'destroy'])->name('admin.books.destroy');
+    });
+
+    Route::prefix('orders')->group(function() {
+        Route::get('/', [OrderController::class, 'index'])->name('admin.orders');
+        Route::get('/status/{status}', [OrderController::class, 'handleStatus'])->name('admin.list.status');
+        Route::get('/{order}/show', [OrderController::class, 'show'])->name('admin.orders.show');
+        Route::get('/update-status/{order}', [OrderController::class, 'updateStatus'])->name('admin.orders.update-status');
     });
 });
 
