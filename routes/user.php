@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\PageController::class, 'index'])->name('home');
@@ -20,6 +21,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category');
+Route::post('/search-result', [SearchController::class, 'search'])->name('search');
+Route::get('/searchAjax', [SearchController::class, 'searchAjax'])->name('searchAjax');
 
 
 

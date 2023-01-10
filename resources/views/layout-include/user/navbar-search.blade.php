@@ -8,8 +8,16 @@
             </div>
             <div class="col-lg-5">
                 <div class="header-search-block">
-                    <input type="text" placeholder="Search entire store here">
-                    <button>Search</button>
+                    <form action="{{route('search')}}" method="POST">
+                        @csrf
+                        <input type="text" id="search" name="search" placeholder="Search entire store here" autocomplete="off">
+                        <button type="submit">Search</button>
+                    </form>
+                    <div id="result" class="panel panel-default" style="position: absolute; z-index: 2; width: 450px;display: none">
+                        <ul class="list-group" id="bookList">
+
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4">
